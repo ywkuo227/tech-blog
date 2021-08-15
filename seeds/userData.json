@@ -1,0 +1,17 @@
+[
+  {
+    "name": "William",
+    "email": "willk@kuos.org",
+    "password": "password12345"
+  },
+  {
+    "name": "Jessica",
+    "email": "jess@kuos.org",
+    "password": "password12345"
+  },
+  {
+    "name": "Swan",
+    "email": "swan@kuos.org",
+    "password": "password12345"
+  }
+]
