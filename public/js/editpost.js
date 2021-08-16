@@ -1,4 +1,4 @@
-const newPostHandler = async (event) => {
+const updatePostHandler = async (event) => {
     event.preventDefault();
    
     const title = document.querySelector('#editPostTitleInput').value.trim();
@@ -42,7 +42,7 @@ const newPostHandler = async (event) => {
 
   document
   .querySelector('.edit-post-form')
-  .addEventListener('submit', newPostHandler);
+  .addEventListener('submit', updatePostHandler);
 
   document
   .querySelector('#delPostBtn')
