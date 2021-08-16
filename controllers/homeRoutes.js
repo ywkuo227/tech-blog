@@ -84,7 +84,9 @@ router.get("/createpost", (req, res) => {
     return;
   }
 
-  res.render('createpost');
+  res.render('createpost', {
+    logged_in: true
+  });
 });
 
 router.get('/login', (req, res) => {
