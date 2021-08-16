@@ -14,10 +14,11 @@
 
             <form class="form new-post-form d-grid gap-3 mx-auto">
                 <div>
-                    <input class="form-control" type="text" id="newPostTitle" placeholder="Post Title"/>
+                    <input class="form-control" type="text" id="newPostTitleInput" placeholder="Post Title" />
                 </div>
                 <div>
-                    <textarea class="form-control" id="newPostContentTextarea" rows="4" placeholder="Enter your post content here..."></textarea>
+                    <textarea class="form-control" id="newPostContentTextarea" rows="4"
+                        placeholder="Enter your post content here..."></textarea>
                 </div>
                 <div class="mx-auto">
                     <button class="btn btn-primary" type="submit"><i class="bi bi-plus-lg"></i> Create New Post</button>
@@ -28,3 +29,7 @@
     </div>
 
 </div>
+
+{{#if logged_in}}
+<script src="/js/newpost.js"></script>
+{{/if}}

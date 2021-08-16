@@ -14,14 +14,14 @@
 
             <form class="form edit-post-form d-grid gap-3 mx-auto" post-id={{id}}>
                 <div>
-                    <textarea class="form-control" id="editPostTitle" rows="1">{{title}}</textarea>
+                    <textarea class="form-control" id="editPostTitleInput" rows="1">{{title}}</textarea>
                 </div>
                 <div>
                     <textarea class="form-control" id="editPostContentTextarea" rows="4">{{content}}</textarea>
                 </div>
                 <div class="d-flex justify-content-center d-grid gap-5">
                     <button class="btn btn-primary" type="submit"><i class="bi bi-cloud-upload-fill"></i> Update Post</button>
-                    <button class="btn btn-primary"><i class="bi bi-trash"></i> Delete Post</button>
+                    <button class="btn btn-primary" id="delPostBtn"><i class="bi bi-trash"></i> Delete Post</button>
                 </div>
             </form>
 
@@ -29,3 +29,7 @@
     </div>
 
 </div>
+
+{{#if logged_in}}
+<script src="/js/editpost.js"></script>
+{{/if}}

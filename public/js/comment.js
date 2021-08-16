@@ -1,9 +1,9 @@
 const newFormHandler = async (event) => {
     event.preventDefault();
-    // console.log(document.querySelector("#selectedPost").getAttribute("value"));
+   
     const comment = document.querySelector('#newCommentTextarea').value.trim();
     const post_id = document.querySelector("#selectedPost").getAttribute("value");
-
+  
     if (comment && post_id) {
       const response = await fetch(`/api/comments`, {
         method: 'POST',
