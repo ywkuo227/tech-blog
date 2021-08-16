@@ -58,6 +58,21 @@ router.get('/post/:id', async (req, res) => {
   }
 });
 
+router.get('/posteditor/:id', async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id);
+    
+    const post = postData.get({ plain: true });
+
+    res.render('posteditor', {
+      ...post,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // Use withAuth middleware to prevent access to route
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
@@ -85,7 +100,7 @@ router.get("/createpost", (req, res) => {
   }
 
   res.render('createpost', {
-    logged_in: true
+    logged_in: req.session.logged_in
   });
 });
 
