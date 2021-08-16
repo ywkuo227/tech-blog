@@ -1,0 +1,56 @@
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <span class="navbar-brand mb-0 mx-2 h1"><strong>The Tech Blog</strong></span>
+    </div>
+</nav>
+
+<div class="my-5 d-grid gap-3">
+
+    <div class="card shadow mx-auto" style="width: 85%;" id="selectedPost" value={{id}}>
+        <div class="card-header d-flex justify-content-between">
+            <div class="h5 mb-0 text-primary"><strong>{{title}}</strong></div>
+            <div>Posted by {{user.name}} on {{format_date date_created}}</div>
+        </div>
+        <div class="card-body">
+            <p class="card-text">{{content}}</p>
+        </div>
+    </div>
+
+    <div class="d-grid gap-2">
+        <!-- Loop over each object in the comment array -->
+        {{#each comments as |comment| }}
+        <div class="card shadow mx-auto" style="width: 83%;">
+            <div class="card-header d-flex justify-content-between">
+                <div>Comment</div>
+                <div>Posted by {{comment.user.name}} on {{format_date comment.date_created}}</div>
+            </div>
+            <div class="card-body">
+                <p class="card-text">{{comment.comment}}</p>
+            </div>
+        </div>
+        {{/each}}
+
+        {{#if logged_in}}
+        <div class="card shadow mx-auto mt-2" style="width: 83%;">
+            <div class="card-header">
+                <div><strong>New Comment</strong></div>
+            </div>
+            <div class="card-body">
+
+                <form class="form new-comment-form d-grid gap-3 mx-auto">
+                    <div>
+                        <textarea class="form-control" id="newCommentTextarea" rows="3"></textarea>
+                    </div>
+                    <div class="mx-auto">
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        {{/if}}
+    </div>
+</div>
+{{#if logged_in}}
+<script src="/js/comment.js"></script>
+{{/if}}

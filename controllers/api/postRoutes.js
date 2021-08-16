@@ -1,8 +1,9 @@
 const router = require("express").Router();
 const { Post } = require("../../models");
-// const withAuth = require("../../utils/auth");
+const withAuth = require("../../utils/auth");
 
-router.post("/", async (req, res) => {
+// Need withAuth
+router.post("/", withAuth, async (req, res) => {
     try {
         const newPost = await Post.create({
             ...req.body,
@@ -15,7 +16,8 @@ router.post("/", async (req, res) => {
     }
 });
 
-router.put("/:id", async (req, res) => {
+// Need withAuth
+router.put("/:id", withAuth, async (req, res) => {
     try {
         const postData = await Post.update(req.body, {
             where: {
@@ -34,5 +36,26 @@ router.put("/:id", async (req, res) => {
         res.status(500).json(err);
     }
 })
+
+// Need withAuth
+router.delete("/:id", withAuth, async (req, res) => {
+    try {
+        const postData = await Post.destroy({
+            where: {
+                id: req.params.id,
+                user_id: req.session.user_id,
+            },
+        });
+
+        if (!postData) {
+            res.status(404).json({ message: "No post fonud with this ID."});
+            return;
+        }
+
+        res.status(200).json(postData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 
 module.exports = router;
