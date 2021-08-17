@@ -58,6 +58,7 @@ router.get('/post/:id', async (req, res) => {
   }
 });
 
+// GET route to fetch post by ID and render Post Editor interface.
 router.get('/posteditor/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id);
@@ -93,6 +94,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
   }
 });
 
+// GET route to validate user session state and render Post Creation interface.
 router.get("/createpost", (req, res) => {
   if (!req.session.logged_in) {
     res.redirect('/login');

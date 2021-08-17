@@ -1,3 +1,4 @@
+// Sequelize/MySQL/JAWSDB connection configurations.
 const Sequelize = require('sequelize');
 require('dotenv').config();
 

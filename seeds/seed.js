@@ -1,3 +1,4 @@
+// Seed file to populate testing data
 const sequelize = require('../config/connection');
 const { User, Post, Comment } = require('../models');
 

@@ -1,3 +1,4 @@
+// Update post handler and Delete post handler to extract and send data to server as API calls.
 const updatePostHandler = async (event) => {
     event.preventDefault();
    

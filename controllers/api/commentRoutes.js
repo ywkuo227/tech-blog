@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { Comment } = require("../../models");
 const withAuth = require("../../utils/auth");
 
-// Need withAuth
+// POST route to add new comment.
 router.post("/", withAuth, async (req, res) => {
     try {
         const newComment = await Comment.create({
@@ -17,7 +17,7 @@ router.post("/", withAuth, async (req, res) => {
     }
 });
 
-// Need withAuth
+// PUT route to update existing comment based on ID. NOT USED.
 router.put("/:id", withAuth, async (req, res) => {
     try {
         const commentData = await Comment.update(req.body, {
@@ -38,7 +38,7 @@ router.put("/:id", withAuth, async (req, res) => {
     }
 })
 
-// Need withAuth
+// DELETE route to delete existing comment based on ID. NOT USED.
 router.delete("/:id", withAuth, async (req, res) => {
     try {
         const commentData = await Comment.destroy({

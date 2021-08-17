@@ -1,3 +1,4 @@
+// New post handler to extract and send data to server as API call.
 const newPostHandler = async (event) => {
     event.preventDefault();
    

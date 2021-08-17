@@ -1,8 +1,9 @@
-const newFormHandler = async (event) => {
+// New comment handler, extract data and send to server as API calls.
+const newCommentHandler = async (event) => {
     event.preventDefault();
    
     const comment = document.querySelector('#newCommentTextarea').value.trim();
-    const post_id = document.querySelector("#selectedPost").getAttribute("value");
+    const post_id = document.querySelector(".postdisplay").getAttribute("post-id");
   
     if (comment && post_id) {
       const response = await fetch(`/api/comments`, {
@@ -23,4 +24,4 @@ const newFormHandler = async (event) => {
 
   document
   .querySelector('.new-comment-form')
-  .addEventListener('submit', newFormHandler);
+  .addEventListener('submit', newCommentHandler);
