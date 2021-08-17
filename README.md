@@ -13,7 +13,7 @@ This app is a CMS-sytle blog site similar to a Wordpress site. The app follows t
 - [Questions](#questions)
 
 ## Installation
-THIS PROCESS REQUIRES MYSQL INSTALLED LOCALLY. Run "npm i" to install all dependencies, "source ./db/schema.sql" in MySQL to create the database, "npm run seed" to seed the test data, then "npm start" to initiate the server and navigate to "[localhost:3001/](localhost:3001/)" to get start.
+THIS PROCESS REQUIRES MYSQL INSTALLED LOCALLY. Run "npm i" to install all dependencies, "source ./db/schema.sql" in MySQL to create the database, "npm run seed" to seed the test data, then "npm start" to initiate the server and navigate to [localhost:3001/](localhost:3001/) to get start.
 
 ## Usage
 This app is a CMS-sytle blog site where developers can publish their blog posts and comment on other developers' posts as well.
@@ -22,6 +22,7 @@ This app is a CMS-sytle blog site where developers can publish their blog posts 
 
 ## Link
 [The Tech Blog running on Heroku](https://ywk-tech-blog.herokuapp.com)
+
 [The Tech Blog GitHub Repo](https://github.com/ywkuo227/tech-blog)
 
 ## Contribute
